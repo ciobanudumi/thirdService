@@ -14,6 +14,7 @@ class SendEmailController extends AbstractController
     #[Route('/send-email', name: 'app_send_email',methods: ['POST'])]
     public function index(MailerInterface $mailer, Request $request): Response
     {
+
         $data = json_decode($request->getContent(), true);
 
         $email = (new Email())
